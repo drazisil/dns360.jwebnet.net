@@ -1,0 +1,154 @@
+2000-10-12  David Blacka  <davidb@research.netsol.com>
+
+	* Release version 0.09.
+
+	* (re)license under LGPL.
+
+	* add copyright notices.
+
+2000-10-09  David Blacka  <davidb@research.netsol.com>
+
+        * Release version 0.08.
+
+	* lib/Net/Rwhois/QueryResult.pm (read_results): Handle unexpected
+	socket closures.
+
+	* lib/Net/Rwhois/Query.pm (_execute_query_set_limit): handle an
+	undefined 'limit' setting.
+
+	* lib/Net/Rwhois/Connection.pm (read_line): Handle unexpected
+	socket closures.
+	(is_open): Detect unexpected socket closures.
+
+	* lib/Net/Rwhois.pm (execute_query): Fail quickly when the socket
+	closes unexpectedly on us.
+	(recursive_execute_query): same.
+
+	* bin/prwhois.cgi: Largely refactored.  Now can do whois queries
+	as well.
+
+2000-07-17  David Blacka  <davidb@netsol.com>
+
+	* bin/prwhois.cgi: do not use "my" when creating global
+	variables.  This does not work under mod_perl.
+	(query_rwhois): do not remove the "host" and "port" parameters
+	from the query string in the ID refererence URL.
+	(simple_format_referrals): use $script_name for the referral URL.
+	(simple_format_errors): strip perl's line number reporting from
+	the error display; skip empty error messages.
+	(simple_format_heading): add the query and query URL to the
+	response header.
+	(main_cgi): reset the url if the CGI is overriding it; trap all
+	rwhois query errors.
+
+	* lib/Net/Rwhois/RwhoisObject.pm (_translate_type_to_text): return
+	"TEXT" even when $type is not defined.  This suppresses some perl
+	warnings.
+
+	* lib/Net/Rwhois/Query.pm (_execute_query_set_limit): new.
+
+	* lib/Net/Rwhois/Connection.pm: use carp() instead of croak() on
+	connection errors
+
+2000-03-24  David Blacka  <davidb@netsol.com>
+	* Net-Rwhois: released version 0.06
+
+	* lib/Net/Rwhois/WhoisResult.pm: added.  This class reads the
+ 	WHOIS result.  It does not attempt to parse the whois result.  It
+ 	does make a limited attempt to separate the legal langaguage that
+ 	preceded some WHOIS responses from the actual response.  It cannot
+ 	tell the difference between multiple record and single record
+ 	responses.
+
+	* lib/Net/Rwhois/WhoisQuery.pm: added.  This class submits a query 
+	to a WHOIS server.  It does some trivial query re-writing based on 
+	whether or not it thinks the whois server will understand they
+	object-class keyword.
+
+	* lib/Net/Rwhois/ResultSet.pm: added.  This class encaps both the
+	records and referrals resulting from a query.
+
+	* lib/Net/Rwhois/ReferralSet.pm: added.  This class handles groups 
+	of equivalent referrals.
+
+	* lib/Net/Rwhois/Referral.pm: Add a member variable for
+	'protocol', so this class can handle whois referrals (and possibly 
+	others).
+
+	* lib/Net/Rwhois/Connection.pm: add a debug mode.
+
+	* lib/Net/Rwhois.pm: Added referral chasing master query function.
+
+	* bin/regyrwhois.cgi: added.  Sample CGI script for the prototype
+	rwhois registry referral server.  Primarily, a rwhois CGI that
+	expects to just get (and follow) whois referrals.
+
+	* bin/prwhois.pl: added.  Command line client that chases referrals.
+
+	* bin/prwhois.cgi: add the 'overrideurl' CGI parameter.  Add logic 
+	to allow for deployment without officially installing Net::Rwhois
+	(i.e., FindBin stuff)
+
+1998-07-29  David Blacka  <davidb@netsol.com>
+        
+	* Net-Rwhois: released version 0.04.
+
+	* bin/prwhois.cgi: added sample CGI script. Many people asked for
+	this.
+	
+	* lib/Net/Rwhois/RwhoisObject.pm (set_attribute_type): added.
+	(get_attribute_type): added.  Basically, logic was added to help
+	track the type info coming back for RWhois 1.5.
+	(to_hash): Make return a hash, not a hashref.
+
+	* lib/Net/Rwhois/QueryResult.pm (get_rwhois_errors): added this
+	routine and the surrounding logic.
+	(parse_rwhois_referral): Make actually work.
+	(_parse_object_1_5): add logic to track attribute types. 
+
+	* lib/Net/Rwhois/Connection.pm (open): do not croak, only carp if
+	open fails.  Probably should remove croak altogether from these
+	modules.
+
+1998-07-06  David Blacka  <davidb@netsol.com>
+
+	* Net-Rwhois: released version 0.03.
+	
+	* lib/Net/Rwhois.pm: new version (0.03).
+
+	* t/perl_rwhois.pl: use sane values for the example.
+
+1998-02-18  David Blacka  <davidb@rwhois.net>
+
+	* lib/Net/Rwhois.pm: fix documentation to show correct usage of
+		  "execute_query" method.
+
+	* lib/Net/Rwhois/RwhoisObject.pm: make
+	          set-{class-name,auth_area,id} methods private. Also make
+		  those methods always set a real attribute.
+
+Mon Nov 10 13:42:48 1997  David Blacka  <davidb@rwhois.net>
+
+	* lib/Net/Rwhois/Connection.pm (configure): added a Referral
+		  object constructor argument.
+
+	* lib/Net/Rwhois/Referral.pm: added.
+
+Thu Jul 24 21:07:16 1997  David Blacka  <davidb@rwhois.net>
+
+	* lib/Net/Rwhois/QueryResult.pm: removed parse_rwhois_object() and
+		  related methods (moved to RwhoisObject.pm).  Replaced
+		  references to the method with a RwhoisObject constructor
+		  call.
+
+	* lib/Net/Rwhois/RwhoisObject.pm (new): added initialization
+		  methods via configure().
+		  (configure): added.
+		  (parse_rwhois_object): added
+		  (_parse_object_1_0): added
+		  (_parse_object_1_5): added
+
+Thu Jul 15 21:02:45 1997  David Blacka  <davidb@rwhois.net>
+
+	* Net-Rwhois: released version 0.01.
+

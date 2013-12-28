@@ -1,0 +1,30 @@
+Net::Rwhois version 0.09
+
+This is the perl5 Net::Rwhois distribution.  It requires perl5.003,
+IO::Socket and IO::Handle.
+
+It is intended to provide a RWhois client API for RWhois versions 1.0
+and 1.5.
+
+Major Changes:
+
+* Referral chasing has been added.
+* Minimal Whois query support has been added.
+* A sample command-line client has been provided.
+
+To install the library, run these commands:
+
+  perl Makefile.PL
+  make
+  make install
+
+An example script that uses some of the API is in t/perl_rwhois.pl.
+THIS IS NOT A CLIENT. It is just a static example of how to use the
+classes.
+
+An example CGI script is in bin/prwhois.cgi.  This is only roughly
+sketched out, but it basically works.
+
+David Blacka <davidb@netsol.com>
+
+Copyright (c) 1997-2000 Network Solutions, Inc.
