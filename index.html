@@ -1,444 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>DNS 360 : Home</title>
-        <link rel="stylesheet" href="assets/css/ui.tabs.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
-        <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="assets/js/jqueryui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="assets/js/core.js"></script>
-    </head>
-    <body class="flora">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>DNS 360 : Home</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+    <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/core.js"></script>
+</head>
+<body>
 
-        <h1>DNS 360</h1>
-        <p><a href="/">Reset All</a></p>
+<h1>DNS 360</h1>
 
-        <div id="container-1">
-            <ul>
-                <li><a href="#fragment-1"><span>Home</span></a></li>
-                <li><a href="#fragment-2"><span>Whois</span></a></li>
-                <li><a href="#fragment-3"><span>DIG</span></a></li>
-                <li><a href="#fragment-4"><span>PTR Lookup</span></a></li>
-                <li><a href="#fragment-5"><span>ARIN IP Lookup</span></a></li>
-                <li><a href="#fragment-6"><span>Misc</span></a></li>
-                <li><a href="#fragment-7"><span>New Whois</span></a></li>
-            </ul>
-            <div id="fragment-1">
-                <p>
-                    DNS 360 provides the most common tools together in one place. 
-                    You can perform WHOIS, DIG and PTR lookups with this set of tools. 
-                </p>
-                <p>
-                    The currently supported domains for the WHOIS are .INFO, .BIZ, .ORG, .COM, .NET and .EDU.
-                    WHOIS information for the .GOV and .MIL domains is not available.
-                </p>
-                <p>
-                    Any questions please contact dns360@jwebnet.net. 
-                </p>
-            </div>
-            <div id="fragment-2">
-                <script type="text/javascript">
-                    function doclear_1() {
-                        document.form_1.res_1.value = "";
-                        return false;
-                    }
-                </script>
-                <div>
-                    WHOIS is a database that contains information on each registered domain name. 
-                    This information includes the registrant&#39;s contact information, 
-                    the administrative and technical contacts, the domain name servers, the creation, 
-                    expiration, and last updated dates.
-                    This information is useful when checking that the domain exists, and that the records
-                    for the name servers (DNS) have not recently changed or expired.
-                </div>
-                <form id="formWhois" name="formWhois" action="" onsubmit="return doTab('formWhois', 'res_1');">
-                    <table class="formTableDefault">
-                        <tr>
-                            <td>Domain Name</td>
-                            <td><input id="domainNameWhois" name="domainNameWhois" type="text" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><input name="whois_1" type="submit" value="Whois"></td>
-                            <td><input name="clear_1" onclick="doclear_1();" type="button" value="Clear"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                            </td>
-                            <td><textarea id="res_1" name="res_1" rows="80" cols="100"></textarea></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-            <div id="fragment-3">
-                <script type="text/javascript">
-                    function dodig_3()
-                    {
-                        var xmlHttp;
-                        try
-                        {  // Firefox, Opera 8.0+, Safari
-                            xmlHttp = new XMLHttpRequest();
-                        }
-                        catch (e)
-                        {
-                            // Internet Explorer
-                            try
-                            {
-                                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-                            }
-                            catch (e)
-                            {
-                                try
-                                {
-                                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                }
-                                catch (e)
-                                {
-                                    alert("Your browser does not support AJAX!");
-                                    return false;
-                                }
-                            }
-                        }
-                        xmlHttp.onreadystatechange = function() {
-                            if (xmlHttp.readyState === 4)
-                            {
-                                document.form_3.res_3.value = xmlHttp.responseText;
-                            }
-                        };
-                        moo3 = document.getElementById("host_3").value;
-                        type3 = document.getElementById("type_3").value;
-                        foo3 = document.getElementById("fgtld_3").value;
-                        d = new Date();
-                        xmlHttp.open("GET", "cgi-bin/dig.cgi?host=" + moo3 + "&type=" + type3 + "&fgtld=" + foo3 + "&Now=" + d.getTime, true);
-                        xmlHttp.send(null);
-                        return false;
-                    }
-                    function doclear_3() {
-                        document.form_3.res_3.value = "";
-                        return false;
-                    }
-                </script>
-                <div>
-                    DIG is a Unix-based program that allows users to learn information from a DNS site. 
-                    This is helpful for locating A, NS and MX DNS records and making sure there are no issues.
-                </div>
-                <form name="form_3" action="" onSubmit="dodig_3();
-                        return false;">
-                    <table class="formTableDefault" cellspacing="0" cellpadding="2">
-                        <tr>
-                            <td>Host to Dig</td>
-                            <td><input id="host_3" name="host_3" type="text" value=""><select id="type_3" name="type_3">
-                                    <option value="any">ANY</option>
-                                    <option value="mx">MX</option>
-                                    <option value="all">ANY</option>
-                                    <option value="a">A</option>
-                                    <option value="cname">CNAME</option>
-                                </select></td>
-                        </tr>
-                        <tr>
-                            <td valign="top">DNS Server</td>
-                            <td><input id="fgtld_3" name="fgtld_3" type="text" value="localhost"> (this can be left as is)</td>
-                        </tr>
-                        <tr>
-                            <td><input name="dig_3" type="submit" value="Dig"></td>
-                            <td><input name="clear_3" onclick="doclear_3();" type="button" value="Clear"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                            </td>
-                            <td><textarea id="res_3" name="res_3" rows="50" cols="100"></textarea></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-            <div id="fragment-4">
-                <script type="text/javascript">
-                    function doptr_4()
-                    {
-                        var xmlHttp;
-                        try
-                        {  // Firefox, Opera 8.0+, Safari
-                            xmlHttp = new XMLHttpRequest();
-                        }
-                        catch (e)
-                        {
-                            // Internet Explorer
-                            try
-                            {
-                                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-                            }
-                            catch (e)
-                            {
-                                try
-                                {
-                                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                }
-                                catch (e)
-                                {
-                                    alert("Your browser does not support AJAX!");
-                                    return false;
-                                }
-                            }
-                        }
-                        xmlHttp.onreadystatechange = function() {
-                            if (xmlHttp.readyState === 4)
-                            {
-                                document.form_4.res_4.value = xmlHttp.responseText;
-                            }
-                        };
-                        moo4 = document.getElementById("host_4").value;
+<div>
+    <ul>
+        <li><a href="index.html"><span>Home</span></a></li>
+        <li><a href="whois.html"><span>Whois</span></a></li>
+        <li><a href="dig.html"><span>DIG</span></a></li>
+        <li><a href="ptr.html"><span>PTR Lookup</span></a></li>
+        <li><a href="ip.html"><span>ARIN IP Lookup</span></a></li>
+    </ul>
+    <div>
+        <p>
+            <a name="_top"></a>
+            DNS 360 provides the most common tools together in one place.
+            You can perform WHOIS, DIG and PTR lookups with this set of tools.
+        </p>
 
-                        xmlHttp.open("GET", "/cgi-bin/ptr.cgi?host=" + moo4, true);
-                        xmlHttp.send(null);
-                        return false;
-                    }
-                    function doclear_4() {
-                        document.form_4.res_4.value = "";
-                        return false;
-                    }
-                </script>
-                <div>
-                    Pointer Record. Also called a reverse record. 
-                    A PTR record associates an IP address with a canonical name. 
-                    PTR records should point to a name that can be resolved back to the IP address.
-                    This is useful for trouble-shooting email and DNS issues.
-                </div>
-                <form name="form_4" action="" onSubmit="doptr_4();
-                        return false;">
-                    <table class="formTableDefault" cellspacing="0" cellpadding="2">
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>IP Address</td>
-                            <td><input id="host_4" name="host_4" type="text" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><input name="ptr_4" type="submit" value="Lookup PTR"></td>
-                            <td><input name="clear_4" onclick="doclear_4();" type="button" value="Clear"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                            </td>
-                            <td><textarea id="res_4" name="res_4" rows="50" cols="100"></textarea></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-            <div id="fragment-5">
-                <script type="text/javascript">
-                    function doarin_6()
-                    {
-                        var xmlHttp;
-                        try
-                        {  // Firefox, Opera 8.0+, Safari
-                            xmlHttp = new XMLHttpRequest();
-                        }
-                        catch (e)
-                        {
-                            // Internet Explorer
-                            try
-                            {
-                                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-                            }
-                            catch (e)
-                            {
-                                try
-                                {
-                                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                }
-                                catch (e)
-                                {
-                                    alert("Your browser does not support AJAX!");
-                                    return false;
-                                }
-                            }
-                        }
-                        xmlHttp.onreadystatechange = function() {
-                            if (xmlHttp.readyState === 4)
-                            {
-                                document.form_6.res_6.value = xmlHttp.responseText;
-                            }
-                        };
-                        moo6 = document.getElementById("domain_6").value;
+        <p>
+            The currently supported domains for the WHOIS are .INFO, .BIZ, .ORG, .COM, .NET and .EDU.
+            WHOIS information for the .GOV and .MIL domains is not available.
+        </p>
 
-                        xmlHttp.open("GET", "doarin.php?host=" + moo6 + "&Now=" + Date(), true);
-                        xmlHttp.send(null);
-                        return false;
-                    }
-                    function doclear_6() {
-                        document.form_6.res_6.value = "";
-                        return false;
-                    }
-                </script>
-                <div>
-                    American Registry for Internet Numbers (ARIN) is a non-profit registry responsible for the 
-                    administration and registration of Internet Protocol (IP) numbers in North and South America, 
-                    South Africa, the Caribbean and all other regions administered currently managed by 
-                    Network Solutions, Inc. This lookup will tell you who controls the block of IP addresses.
-                </div>
-                <form name="form_6" action="" onSubmit="doarin_6();
-                        return false;">
-                    <table class="formTableDefault" cellspacing="0" cellpadding="2">
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>IP Address</td>
-                            <td><input id="domain_6" name="domain_6" type="text" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><input name="whois_6" type="submit" value="ARIN Lookup"></td>
-                            <td><input name="clear_6" onclick="doclear_6();" type="button" value="Clear"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                                <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                            </td>
-                            <td><textarea id="res_6" name="res_6" rows="80" cols="100"></textarea></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-            <div id="fragment-6">
-                <p>
-                    Misc Tools
-                </p>
-            </div>
-            <div id="fragment-7">
-                <script type="text/javascript">
-                    function dns360ajax(mode, url, inputId, result) {
-                        var xmlHttp;
-                        try
-                        {  // Firefox, Opera 8.0+, Safari
-                            xmlHttp = new XMLHttpRequest();
-                        }
-                        catch (e)
-                        {
-                            // Internet Explorer
-                            try
-                            {
-                                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-                            }
-                            catch (e)
-                            {
-                                try
-                                {
-                                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                }
-                                catch (e)
-                                {
-                                    alert("Your browser does not support AJAX!");
-                                    return false;
-                                }
-                            }
-                        }
-                        xmlHttp.onreadystatechange = function() {
-                            if (xmlHttp.readyState === 4)
-                            {
-                                resultText = "<pre>" + xmlHttp.responseText + "</pre>";
-                                $(result).html(resultText);
-                            }
-                        };
-                        param1 = document.getElementById(inputId).value;
+        <p>
+            Any questions please contact dns360@jwebnet.net.
+        </p>
+    </div>
+</div>
+<script type="text/javascript">
 
-                        xmlHttp.open(mode, url + param1 + "&Now=" + Date(), true);
-                        xmlHttp.send(null);
-                        return false;
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-246703-5']);
+    _gaq.push(['_trackPageview']);
 
-                    }
-                    function doclear_whois2() {
-                        document.form__whois2.res_whois2.value = "";
-                        return false;
-                    }
-                </script>
-                <div>
-                    WHOIS is a database that contains information on each registered domain name. 
-                    This information includes the registrant&#39;s contact information, 
-                    the administrative and technical contacts, the domain name servers, the creation, 
-                    expiration, and last updated dates.
-                    This information is useful when checking that the domain exists, and that the records
-                    for the name servers (DNS) have not recently changed or expired.
-                </div>
-                <form name="form_whois2" action="" onsubmit="
-                        dns360ajax('GET', 'dowhodig.php?host=', 'whois2input1', '#whoisData');
-                        return false;">
-                    <table class="formTableDefault" cellspacing="0" cellpadding="2">
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Domain Name</td>
-                            <td><input id="whois2input1" name="whois2input1" type="text" value=""></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><input name="whois_2" type="submit" value="Whois"></td>
-                        </tr>
-                    </table>
-                </form>
-                <div id="whoisData"></div>
-            </div>
-        </div>
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
 
-
-        <script type="text/javascript">
-            // <![CDATA[
-            $(window).bind('load', function() {
-                $('#container-1').tabs();
-            });
-            // ]]>
-        </script>
-        <script type="text/javascript">
-
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-246703-5']);
-            _gaq.push(['_trackPageview']);
-
-            (function() {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ga, s);
-            })();
-
-        </script>
-    </body>
+</script>
+</body>
 </html>

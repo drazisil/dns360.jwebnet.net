@@ -1,7 +1,7 @@
 var dns360_form_urls = {};
 
 dns360_form_urls = {
-    "formWhois": "dowhodig.php?"
+    "formWhois": "backend/dowhodig.php?"
 };
 
 
