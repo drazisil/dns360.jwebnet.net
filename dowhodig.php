@@ -10,7 +10,7 @@ switch ( strtoupper(substr($domain, -4)) ) {
 }
 switch ( strtoupper(substr($domain, -3)) ) {
     case "BIZ":
-        $whois_server = "hois.whois.biz";
+        $whois_server = "whois.whois.biz";
         break;
     case "ORG":
         $whois_server = "whois.pir.org";
@@ -74,4 +74,3 @@ if ( $type == "whodig" ) {
     
     echo file_get_contents ( 'http://dns360.jwebnet.net/cgi-bin/dig.cgi?host='.$domain.'&fgtld='.$fgtld);
 } 
-?>
