@@ -1,5 +1,7 @@
 <?php
 
+// TODO: Clean this up!
+
 $type = $_REQUEST["type"];
 $domain = $_REQUEST["host"];
 $fgtld = $_REQUEST["fgtld"];
@@ -59,7 +61,7 @@ function ae_whois($query, $server)
 $whois_data = ae_whois('domain ' . $domain . '', $whois_server);
 // echo $whois_data;
 
-if (preg_match("Whois Server: ([a-zA-Z0-9\.]+)", $whois_data, $regs)) {
+if (preg_match("/Whois Server: ([a-zA-Z0-9\.]+)/", $whois_data, $regs)) {
     $whois_server = $regs[1];
     $whois_data = ae_whois($domain, $whois_server);
     echo " *** WHOIS SERVER : " . $whois_server . " ***\n\nData current as of " . date('r') . "\n\n";
@@ -70,8 +72,3 @@ if (preg_match("Whois Server: ([a-zA-Z0-9\.]+)", $whois_data, $regs)) {
     echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
     echo $whois_data;
 }
-if ($type == "whodig") {
-    echo "\n\n~~~~~~~~~~~~ DIG RESULTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
-
-    echo file_get_contents('http://dns360.jwebnet.net/cgi-bin/dig.cgi?host=' . $domain . '&fgtld=' . $fgtld);
-} 

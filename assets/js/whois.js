@@ -9,7 +9,7 @@ dns360_form_fields.formWhois = {
 };
 
 function doWhois() {
-    var queryString = 'backend/dowhodig.php?host=' + $("#domainNameWhois").val();
+    var queryString = 'backend/doWho.php?host=' + $("#domainNameWhois").val();
 
     $.get(queryString, function (data) {
         $("#res_1").html(data);
