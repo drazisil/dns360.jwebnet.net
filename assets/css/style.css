@@ -12,14 +12,16 @@
 */
 
 .big {
-    font-size:400%;
+    font-size: 400%;
     text-decoration: none;
     color: #a0a0a0;
 }
+
 /* Not required for Tabs, just to make this demo look better... */
 body, h1, h2 {
     font-family: "Trebuchet MS", Trebuchet, Verdana, Helvetica, Arial, sans-serif;
 }
+
 h1 {
     margin: 1em 0 1.5em;
     font-size: 18px;
@@ -28,13 +30,14 @@ h1 {
 p {
     margin: 0;
 }
-pre, pre+p, p+p {
+
+pre, pre + p, p + p {
     margin: 1em 0 0;
 }
 
 .formTableDefault {
-    border: 0px;
+    border: 0;
     padding: 2px;
-    border-spacing: 0px;
+    border-spacing: 0;
     border-collapse: separate;
 }
