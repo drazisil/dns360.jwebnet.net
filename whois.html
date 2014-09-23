@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>DNS 360 : Home</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+    <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/core.js"></script>
+    <script type="text/javascript" src="assets/js/whois.js"></script>
+</head>
+<body>
+
+<h1>DNS 360</h1>
+
+<div>
+    <ul>
+        <li><a href="index.html"><span>Home</span></a></li>
+        <li><a href="whois.html"><span>Whois</span></a></li>
+        <li><a href="dig.html"><span>DIG</span></a></li>
+        <li><a href="ptr.html"><span>PTR Lookup</span></a></li>
+        <li><a href="ip.html"><span>ARIN IP Lookup</span></a></li>
+    </ul>
+    <div>
+        <script type="text/javascript">
+            function doclear_1() {
+                document.form_1.res_1.value = "";
+                return false;
+            }
+        </script>
+        <div>
+            WHOIS is a database that contains information on each registered domain name.
+            This information includes the registrant&#39;s contact information,
+            the administrative and technical contacts, the domain name servers, the creation,
+            expiration, and last updated dates.
+            This information is useful when checking that the domain exists, and that the records
+            for the name servers (DNS) have not recently changed or expired.
+        </div>
+        <form id="formWhois" name="formWhois" action="" onsubmit="return doWhois();">
+            <table class="formTableDefault">
+                <tr>
+                    <td>Domain Name</td>
+                    <td><label for="domainNameWhois">Domain name: <input id="domainNameWhois" name="domainNameWhois"
+                                                                         type="text" value=""></label></td>
+                </tr>
+                <tr>
+                    <td><input name="whois_1" type="submit" value="Whois"></td>
+                    <td><input name="clear_1" onclick="doclear_1();" type="button" value="Clear"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+                    </td>
+                    <td><textarea id="res_1" name="res_1" rows="80" cols="100"></textarea></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-246703-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</body>
+</html>
