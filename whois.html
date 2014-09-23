@@ -21,13 +21,8 @@
         <li><a href="ip.html"><span>ARIN IP Lookup</span></a></li>
     </ul>
     <div>
-        <script type="text/javascript">
-            function doclear_1() {
-                document.form_1.res_1.value = "";
-                return false;
-            }
-        </script>
         <div>
+            <a name="top"></a>
             WHOIS is a database that contains information on each registered domain name.
             This information includes the registrant&#39;s contact information,
             the administrative and technical contacts, the domain name servers, the creation,
@@ -44,7 +39,7 @@
                 </tr>
                 <tr>
                     <td><input name="whois_1" type="submit" value="Whois"></td>
-                    <td><input name="clear_1" onclick="doclear_1();" type="button" value="Clear"></td>
+                    <td><input type="reset" value="Clear"></td>
                 </tr>
                 <tr>
                     <td>
@@ -68,7 +63,8 @@
 
                         <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
                     </td>
-                    <td><textarea id="res_1" name="res_1" rows="80" cols="100"></textarea></td>
+                    <td><label for="res_1">Results: <textarea id="res_1" name="res_1" rows="80"
+                                                              cols="100"></textarea></label></td>
                 </tr>
             </table>
         </form>
