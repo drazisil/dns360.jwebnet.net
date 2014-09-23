@@ -59,6 +59,7 @@
             }
         </script>
         <div>
+            <a name="top"></a>
             DIG is a Unix-based program that allows users to learn information from a DNS site.
             This is helpful for locating A, NS and MX DNS records and making sure there are no issues.
         </div>
@@ -66,18 +67,22 @@
                         return false;">
             <table class="formTableDefault" cellspacing="0" cellpadding="2">
                 <tr>
-                    <td>Host to Dig</td>
-                    <td><input id="host_3" name="host_3" type="text" value=""><select id="type_3" name="type_3">
-                        <option value="any">ANY</option>
-                        <option value="mx">MX</option>
-                        <option value="all">ANY</option>
-                        <option value="a">A</option>
-                        <option value="cname">CNAME</option>
-                    </select></td>
+                    <td></td>
+                    <td><label for="host_3">Host to Dig: <input id="host_3" name="host_3" type="text" value=""></label>
+                        <label for="type_3">Type of record: <select id="type_3" name="type_3">
+                            <option value="any">ANY</option>
+                            <option value="mx">MX</option>
+                            <option value="all">ANY</option>
+                            <option value="a">A</option>
+                            <option value="cname">CNAME</option>
+                        </select></label>
+                    </td>
                 </tr>
                 <tr>
-                    <td valign="top">DNS Server</td>
-                    <td><input id="fgtld_3" name="fgtld_3" type="text" value="localhost"> (this can be left as is)</td>
+                    <td valign="top"></td>
+                    <td><label for="fgtld_3">DNS Server: <input id="fgtld_3" name="fgtld_3" type="text"
+                                                                value="localhost"> (this can be left as is)</label>
+                    </td>
                 </tr>
                 <tr>
                     <td><input name="dig_3" type="submit" value="Dig"></td>
@@ -99,7 +104,9 @@
 
                         <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
                     </td>
-                    <td><textarea id="res_3" name="res_3" rows="50" cols="100"></textarea></td>
+                    <td><label for="res_3">Results: <textarea id="res_3" name="res_3" rows="50"
+                                                              cols="100"></textarea></label>
+                    </td>
                 </tr>
             </table>
         </form>

@@ -57,6 +57,7 @@
             }
         </script>
         <div>
+            <a name="top"></a>
             Pointer Record. Also called a reverse record.
             A PTR record associates an IP address with a canonical name.
             PTR records should point to a name that can be resolved back to the IP address.
@@ -70,8 +71,9 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>IP Address</td>
-                    <td><input id="host_4" name="host_4" type="text" value=""></td>
+                    <td></td>
+                    <td><label for="host_4">IP Address: <input id="host_4" name="host_4" type="text" value=""></label>
+                    </td>
                 </tr>
                 <tr>
                     <td><input name="ptr_4" type="submit" value="Lookup PTR"></td>
@@ -93,7 +95,9 @@
 
                         <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
                     </td>
-                    <td><textarea id="res_4" name="res_4" rows="50" cols="100"></textarea></td>
+                    <td><label for="res_4">Results: <textarea id="res_4" name="res_4" rows="50"
+                                                              cols="100"></textarea></label>
+                    </td>
                 </tr>
             </table>
         </form>
