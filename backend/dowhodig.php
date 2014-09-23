@@ -59,7 +59,7 @@ function ae_whois($query, $server)
 $whois_data = ae_whois('domain ' . $domain . '', $whois_server);
 // echo $whois_data;
 
-if (ereg("Whois Server: ([a-zA-Z0-9\.]+)", $whois_data, $regs)) {
+if (preg_match("Whois Server: ([a-zA-Z0-9\.]+)", $whois_data, $regs)) {
     $whois_server = $regs[1];
     $whois_data = ae_whois($domain, $whois_server);
     echo " *** WHOIS SERVER : " . $whois_server . " ***\n\nData current as of " . date('r') . "\n\n";

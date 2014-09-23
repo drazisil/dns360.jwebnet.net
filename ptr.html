@@ -5,7 +5,6 @@
     <title>DNS 360 : Home</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/core.js"></script>
 </head>
 <body>
 
@@ -46,7 +45,7 @@
                         document.form_4.res_4.value = xmlHttp.responseText;
                     }
                 };
-                moo4 = document.getElementById("host_4").value;
+                var moo4 = document.getElementById("host_4").value;
 
                 xmlHttp.open("GET", "/cgi-bin/ptr.cgi?host=" + moo4, true);
                 xmlHttp.send(null);

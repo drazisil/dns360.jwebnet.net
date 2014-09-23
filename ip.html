@@ -5,7 +5,6 @@
     <title>DNS 360 : Home</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/core.js"></script>
 </head>
 <body>
 
@@ -46,9 +45,9 @@
                         document.form_6.res_6.value = xmlHttp.responseText;
                     }
                 };
-                moo6 = document.getElementById("domain_6").value;
+                var moo6 = document.getElementById("domain_6").value;
 
-                xmlHttp.open("GET", "doarin.php?host=" + moo6 + "&Now=" + Date(), true);
+                xmlHttp.open("GET", "doarin.php?host=" + moo6 + "&Now=" + new Date(), true);
                 xmlHttp.send(null);
                 return false;
             }
