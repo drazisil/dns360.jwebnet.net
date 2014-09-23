@@ -10,13 +10,13 @@
 
 .flora .ui-toolbar {
   position:relative;
-  padding:0px;
-  margin:0px;
+    padding: 0;
+    margin: 0;
 }
 .flora .ui-toolbar ul {
   background:#E6F7D4;
-  padding:0px;
-  margin:0px;
+    padding: 0;
+    margin: 0;
 }
   .flora .ui-toolbar ul li {
     list-style-type: none;
@@ -29,7 +29,7 @@
     display:inline;
   }
   .flora .ui-toolbar ul.ui-toolbar-vert {
-    padding: 0.025em 0em;
+      padding: 0.025em 0;
     border-left: 1px solid #111;
     border-right: 1px solid #444;
   }
@@ -91,20 +91,20 @@
   }
   .flora .ui-toolbar ul li .ui-toolbar-btn-left {
     width:3px;
-    padding:5px 0px 1px 0;
+      padding: 5px 0 1px 0;
     position:absolute;
     top:-3px;
-    bottom:0px;
+      bottom: 0;
     left:-3px;
     height:100%;
   }
   .flora .ui-toolbar ul li.ui-toolbar-btn-over .ui-toolbar-btn-left i,
   .flora .ui-toolbar ul li.ui-toolbar-btn-active .ui-toolbar-btn-left i{
     width:3px; height:5px;
-    padding:0px 0px 0px 0px;
+      padding: 0 0 0 0;
     position:absolute;
-    bottom:0px;
-    left:0px;
+      bottom: 0;
+      left: 0;
   }
   .flora .ui-toolbar ul li.ui-toolbar-btn-over .ui-toolbar-btn-center,
   .flora .ui-toolbar ul li.ui-toolbar-btn-active .ui-toolbar-btn-center{
@@ -119,7 +119,7 @@
     background:url("i/accordion-left-over.png") no-repeat left bottom;
   }
   .flora .ui-toolbar ul li .ui-toolbar-btn-center {
-    padding: 0.2em 0em;
+      padding: 0.2em 0;
     line-height:2.2em;
   }
     .flora .ui-toolbar ul.ui-toolbar-horiz li.ui-toolbar-btn {
@@ -135,7 +135,7 @@
         vertical-align: middle;
         background:transparent;
         color:#000;
-        border:0px none;
+          border: 0 none;
         cursor:pointer;
         overflow:visible;
         -moz-outline:0 none;
@@ -223,8 +223,8 @@
     display:inline;
   }
   .flora .ui-toolbar ul.ui-toolbar-horiz li.ui-toolbar-radioGrp ul {
-    margin:0px;
-    padding:0px;
+      margin: 0;
+      padding: 0;
   }
 
   .flora .ui-toolbar ul.ui-toolbar-vert li.ui-toolbar-radioGrp,
@@ -233,8 +233,8 @@
     display:block;
   }
   .flora .ui-toolbar ul.ui-toolbar-vert li.ui-toolbar-radioGrp ul {
-    margin:0px;
-    padding:0px;
+      margin: 0;
+      padding: 0;
   }
 
 
