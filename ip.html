@@ -5,84 +5,75 @@
     <title>DNS 360 : IP lookup (IP address ownership)</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/ip.js"></script>
 </head>
 <body>
-
-<h1>IP Address Ownership</h1>
-
-<div>
-    <ul>
+<nav>
+<ul>
         <li><a href="index.html"><span>Home</span></a></li>
         <li><a href="whois.html"><span>Whois</span></a></li>
         <li><a href="dig.html"><span>DIG</span></a></li>
         <li><a href="ptr.html"><span>PTR Lookup</span></a></li>
         <li><a href="ip.html"><span>ARIN IP Lookup</span></a></li>
     </ul>
+</nav>
+<main>
+    <h1>IP Address Ownership</h1>
+
     <div>
-        <script type="text/javascript">
-
-            function doArin() {
-                var queryString = 'backend/doArin.php?host=' + $("#inIPAddress").val();
-
-                $.get(queryString, function (data) {
-                    $("#res_6").html(data);
-                });
-                return false;
-            }</script>
         <div>
-            <a name="top"></a>
-            American Registry for Internet Numbers (ARIN) is a non-profit registry responsible for the
-            administration and registration of Internet Protocol (IP) numbers in North and South America,
-            South Africa, the Caribbean and all other regions administered currently managed by
-            Network Solutions, Inc. This lookup will tell you who controls the block of IP addresses.
+            <div>
+                <a name="top"></a>
+                American Registry for Internet Numbers (ARIN) is a non-profit registry responsible for the
+                administration and registration of Internet Protocol (IP) numbers in North and South America,
+                South Africa, the Caribbean and all other regions administered currently managed by
+                Network Solutions, Inc. This lookup will tell you who controls the block of IP addresses.
+            </div>
+            <form name="form_6" action="#" onSubmit="return doArin();">
+                <table class="formTableDefault">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><label for="inIPAddress">IP Address: <input id="inIPAddress" name="domain_6" type="text"
+                                                                        value=""></label>
+                            <input type="submit" value="ARIN Lookup">
+                            <input type="reset" value="Clear">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+
+                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+                        </td>
+                        <td><label for="res_6">Results: <textarea id="res_6" name="res_6" rows="80"
+                                                                  cols="100"></textarea></label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
-        <form name="form_6" action="" onSubmit="doArin();
-                        return false;">
-            <table class="formTableDefault" cellspacing="0" cellpadding="2">
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><label for="inIPAddress">IP Address: <input id="inIPAddress" name="domain_6" type="text"
-                                                                    value=""></label>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="ARIN Lookup"></td>
-                    <td><input type="reset" value="Clear"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                        <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                    </td>
-                    <td><label for="res_6">Results: <textarea id="res_6" name="res_6" rows="80"
-                                                              cols="100"></textarea></label>
-                    </td>
-                </tr>
-            </table>
-        </form>
     </div>
-</div>
-<script type="text/javascript" src="assets/js/googleAnalytics.js"></script>
+    <script type="text/javascript" src="assets/js/googleAnalytics.js"></script>
+</main>
 </body>
 </html>
