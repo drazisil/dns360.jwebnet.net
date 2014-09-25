@@ -20,7 +20,6 @@
     </nav>
 </header>
 <main>
-
     <h1>Whois Lookup</h1>
 
     <p><a name="top"></a>
@@ -33,13 +32,16 @@
     </p>
 
     <form id="formWhois" name="formWhois" onsubmit="return doWhois();">
-        <label for="domainNameWhois">Domain name: <input id="domainNameWhois" name="domainNameWhois"
-                                                         type="text" value=""></label>
-        <input name="whois_1" type="submit" value="Search">
-        <input type="reset" value="Clear"><br>
+        <p><label for="domainNameWhois">Domain name: <input id="domainNameWhois" name="domainNameWhois"
+                                                            type="text" value=""></label>
+            <input name="whois_1" type="submit" value="Search">
+            <input type="reset" value="Clear"></p>
 
-        <label for="res_1">Results: <br><textarea id="res_1" name="res_1" rows="80"
-                                                  cols="100"></textarea></label>
+        <p>
+            Results:<br>
+
+        <div id="whoisResults" class="results">
+        </div>
     </form>
     <script type="text/javascript" src="assets/js/googleAnalytics.js"></script>
 </main>
