@@ -5,11 +5,12 @@
     <title>DNS 360 : PTR Lookup (Reverse DNS Record)</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/ptr.js"></script>
 </head>
 <body>
 <nav>
-<ul>
-        <li><a href="index.html"><span>Home</span></a></li>
+    <ul>
+    <li><a href="index.html"><span>Home</span></a></li>
         <li><a href="whois.html"><span>Whois</span></a></li>
         <li><a href="dig.html"><span>DIG</span></a></li>
         <li><a href="ptr.html"><span>PTR Lookup</span></a></li>
@@ -20,93 +21,28 @@
 
     <h1>PTR Record Lookup</h1>
 
-    <div>
-        <div>
-            <script type="text/javascript">
-                function doptr_4() {
-                    var xmlHttp;
-                    try {  // Firefox, Opera 8.0+, Safari
-                        xmlHttp = new XMLHttpRequest();
-                    }
-                    catch (e) {
-                        // Internet Explorer
-                        try {
-                            xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-                        }
-                        catch (e) {
-                            try {
-                                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-                            }
-                            catch (e) {
-                                alert("Your browser does not support AJAX!");
-                                return false;
-                            }
-                        }
-                    }
-                    xmlHttp.onreadystatechange = function () {
-                        if (xmlHttp.readyState === 4) {
-                            document.form_4.res_4.value = xmlHttp.responseText;
-                        }
-                    };
-                    var moo4 = document.getElementById("host_4").value;
+    <p>
+        Pointer Record. Also called a reverse record.
+        A PTR record associates an IP address with a canonical name.
+        PTR records should point to a name that can be resolved back to the IP address.
+        This is useful for trouble-shooting email and DNS issues.
+    </p>
 
-                    xmlHttp.open("GET", "/cgi-bin/ptr.cgi?host=" + moo4, true);
-                    xmlHttp.send(null);
-                    return false;
-                }
-                function doclear_4() {
-                    document.form_4.res_4.value = "";
-                    return false;
-                }
-            </script>
-            <div>
-                <a name="top"></a>
-                Pointer Record. Also called a reverse record.
-                A PTR record associates an IP address with a canonical name.
-                PTR records should point to a name that can be resolved back to the IP address.
-                This is useful for trouble-shooting email and DNS issues.
-            </div>
-            <form name="form_4" action="" onSubmit="doptr_4();
-                        return false;">
-                <table class="formTableDefault" cellspacing="0" cellpadding="2">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><label for="host_4">IP Address: <input id="host_4" name="host_4" type="text"
-                                                                   value=""></label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input name="ptr_4" type="submit" value="Lookup PTR"></td>
-                        <td><input name="clear_4" onclick="doclear_4();" type="button" value="Clear"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+    <form onSubmit="return doPtr();">
+        <p>
+            <label for="ptrIP">IP Address: <input id="ptrIP" name="ptrIP" type="text"></label>
+            <input type="submit" value="Lookup PTR">
+            <input type="reset" value="Clear">
+        </p>
 
-                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
+        <p>
+            Results:
+        </p>
 
-                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-
-                            <p><a class="big" href="#top"><span>&nbsp;&uarr;</span></a>
-                        </td>
-                        <td><label for="res_4">Results: <textarea id="res_4" name="res_4" rows="50"
-                                                                  cols="100"></textarea></label>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+        <div id="ptrResults" class="results">
         </div>
-    </div>
+    </form>
+
     <script type="text/javascript" src="assets/js/googleAnalytics.js"></script>
 </main>
 </body>
