@@ -3,10 +3,16 @@
  */
 
 function doDig() {
-    var queryString = 'cgi-bin/dig.cgi?host=' + $("#digHost").val() + '&type=' + $("#digType").val() + '&fgtld=' + $("#digServer").val() + "&Now=" + new Date().getTime;
+
+    var digHost = document.getElementById('digHost').value;
+    var digType = document.getElementById('digType').value;
+    var digServer = document.getElementById('digServer').value;
+    var digTime = new Date().getTime;
+
+    var queryString = 'cgi-bin/dig.cgi?host=' + digHost + '&type=' + digType + '&fgtld=' + digServer + "&Now=" + digTime;
 
     $.get(queryString, function (data) {
-        $("#digResults").html('<pre>' + data + '</pre>');
+        document.getElementById('digResults').innerHTML = '<pre>' + data + '</pre>';
     });
     return false;
 }
