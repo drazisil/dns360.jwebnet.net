@@ -3,10 +3,11 @@
  */
 
 function doWhois() {
-    var queryString = 'backend/doWho.php?host=' + $("#domainNameWhois").val();
+    var whoisHost = document.getElementById('whoisHost').value;
+    var queryString = 'backend/doWho.php?host=' + whoisHost;
 
     $.get(queryString, function (data) {
-        $("#whoisResults").html('<pre>' + data + '</pre>');
+        document.getElementById('whoisResults').innerHTML = '<pre>' + data + '</pre>';
     });
     return false;
 }
