@@ -2,9 +2,7 @@
 
 // TODO: Clean this up!
 
-$type = $_REQUEST["type"];
 $domain = $_REQUEST["host"];
-$fgtld = $_REQUEST["fgtld"];
 switch (strtoupper(substr($domain, -4))) {
     case "INFO":
         $whois_server = "afilias.info";
