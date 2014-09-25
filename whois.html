@@ -23,7 +23,7 @@
     <h1>Whois Lookup</h1>
 
     <p>
-    WHOIS is a database that contains information on each registered domain name.
+        WHOIS is a database that contains information on each registered domain name.
         This information includes the registrant's contact information,
         the administrative and technical contacts, the domain name servers, the creation,
         expiration, and last updated dates.
@@ -31,10 +31,10 @@
         for the name servers (DNS) have not recently changed or expired.
     </p>
 
-    <form id="formWhois" name="formWhois" onsubmit="return doWhois();">
-        <p><label for="domainNameWhois">Domain name: <input id="domainNameWhois" name="domainNameWhois"
-                                                            type="text" value=""></label>
-            <input name="whois_1" type="submit" value="Search">
+    <form onsubmit="return doWhois();">
+        <p><label for="whoisHost">Domain name: <input id="whoisHost" name="whoisHost"
+                                                      type="text" value=""></label>
+            <input type="submit" value="Search">
             <input type="reset" value="Clear"></p>
 
         <p>
