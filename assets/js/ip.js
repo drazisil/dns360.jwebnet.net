@@ -2,10 +2,11 @@
  * Created by joseph on 9/24/2014.
  */
 function doArin() {
-    var queryString = 'backend/doArin.php?host=' + $("#inIPAddress").val();
+    var arinIP = document.getElementById('arinIP').value;
+    var queryString = 'backend/doArin.php?host=' + arinIP;
 
     $.get(queryString, function (data) {
-        $("#res_6").html(data);
+        document.getElementById('arinResults').innerHTML = '<pre>' + data + '</pre>';
     });
     return false;
 }
