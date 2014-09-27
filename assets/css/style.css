@@ -27,9 +27,15 @@ nav {
     max-width: 800px;
     /* IE <9 */
     display: block;
+    margin-top: 16px;
     margin-bottom: 16px;
     /* CSS3 */
     border-radius: 5px;
+}
+
+nav ul {
+    /* IE <9 */
+    margin-bottom: 0;
 }
 
 nav ul li {
